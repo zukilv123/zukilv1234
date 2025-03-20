@@ -9,63 +9,44 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     .w3-main {
-  margin-left: 60px; /* Shift content to the right */
-  margin-right: 60px; /* Shift content away from right */
-}
-
-.w3-container {
-  padding-left: 20px; /* Add more padding inside */
-  padding-right: 20px;
-}
-  body, h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
-  }
-  body {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  background-color: #f0f0f0;
-  }
-  body::before,
-  body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #007bff,
-    #007bff 10px,
-    #ffffff 10px,
-    #ffffff 20px
-  );
-  }
-  body::before {
-  left: 0;
-  }
-  body::after {
-  right: 0;
-  }
-  h1 {
-  font-size: 2.5em;
-  text-align: center;
-  margin-bottom: 30px;
-  padding: 15px;
-  color: #ffffff;
-  background: #007bff;
-  border-radius: 10px;
-  }
-  .w3-container img {
-  border: 5px solid transparent;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-  }
-  .w3-container img:hover {
-  transform: scale(1.05);
-  border-color: #007bff;
-  }
+      margin-left: 60px;
+      margin-right: 60px;
+    }
+    .w3-container {
+      padding-left: 20px;
+      padding-right: 20px;
+      position: relative;
+    }
+    .image-container {
+      position: relative;
+      cursor: pointer;
+    }
+    .popup-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 123, 255, 0.9);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      text-align: center;
+      width: 80%;
+      max-width: 300px;
+    }
+    .w3-container img {
+      border: 5px solid transparent;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+      width: 100%;
+    }
+    .w3-container img:hover {
+      transform: scale(1.05);
+      border-color: #007bff;
+    }
   </style>
 </head>
 <body class="w3-light-grey">
@@ -77,52 +58,32 @@
     </header>
     <div class="w3-row-padding">
       <div class="w3-half w3-container w3-margin-bottom">
-        <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-02-21%20123149.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Lorem Ipsum</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <div class="image-container" onclick="togglePopup(this)">
+          <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-02-21%20123149.png" alt="Norway">
+          <div class="popup-text">
+            <p><b>Lorem Ipsum</b></p>
+            <p>Praesent tincidunt sed tellus ut rutrum.</p>
+          </div>
         </div>
       </div>
       <div class="w3-half w3-container w3-margin-bottom">
-        <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-02-28%20120510.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Lorem Ipsum</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-row-padding">
-      <div class="w3-half w3-container w3-margin-bottom">
-        <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-02-28%20115958.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Lorem Ipsum</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-      <div class="w3-half w3-container w3-margin-bottom">
-        <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-03-15%20163239.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Lorem Ipsum</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-row-padding">
-      <div class="w3-half w3-container w3-margin-bottom">
-        <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-02-28%20120303.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Lorem Ipsum</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-      <div class="w3-half w3-container w3-margin-bottom">
-        <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-03-15%20164254.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Lorem Ipsum</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <div class="image-container" onclick="togglePopup(this)">
+          <img src="images/Ekr%C4%81nuz%C5%86%C4%93mums%202025-02-28%20120510.png" alt="Norway">
+          <div class="popup-text">
+            <p><b>Lorem Ipsum</b></p>
+            <p>Sed vitae justo condimentum.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function togglePopup(element) {
+      let popup = element.querySelector(".popup-text");
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
+
