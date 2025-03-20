@@ -42,6 +42,16 @@
       background-color: #f0f0f0;
     }
 
+    /* Spinning bar animation */
+    @keyframes spin {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 0 40px;
+      }
+    }
+
     body::before,
     body::after {
       content: "";
@@ -56,6 +66,7 @@
         #ffffff 10px,
         #ffffff 20px
       );
+      animation: spin 2s linear infinite;
     }
 
     body::before {
@@ -120,7 +131,7 @@
       </div>
       <div class="w3-half w3-container w3-margin-bottom">
         <div class="w3-container">
-          <iframe width="100%" height="700" src="https://www.youtube.com/embed/Z6FPcSsL0W4" 
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/Z6FPcSsL0W4" 
           title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen></iframe>
         </div>
