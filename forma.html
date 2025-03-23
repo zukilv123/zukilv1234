@@ -22,16 +22,18 @@
     <!-- Section 2: Multiplication -->
 <form>
     <div>1. skaitlis: <input type="text" id="sk1" name="sk1"></div>
-    <div>2. skaitlis: <input type="text" id="sk2" name="sk2"></div>
     <div>
-        <button onclick="rez.value=+sk1.value + +sk2.value">+</button>
-        <button onclick="rez.value=sk1.value-sk2.value">-</button>
-        <button onclick="rez.value=sk1.value*sk2.value">×</button>
-        <button onclick="rez.value=sk2.value!=0?sk1.value/sk2.value:'Nedrīkst dalīt ar 0'">÷</button>
-        <button onclick="sk1.value=sk2.value=rez.value=''">Reset</button>
+        <button type="button" onclick="rez.value=+sk1.value + +sk2.value">+</button>
+        <button type="button" onclick="rez.value=+sk1.value - +sk2.value">-</button>
+        <button type="button" onclick="rez.value=+sk1.value * +sk2.value">×</button>
+        <button type="button" onclick="rez.value=+sk2.value !== 0 ? +sk1.value / +sk2.value : 'Nedrīkst dalīt ar 0'">÷</button>
+        <button type="button" onclick="sk1.value=sk2.value=rez.value=''">Reset</button>
     </div>
+    <div>2. skaitlis: <input type="text" id="sk2" name="sk2"></div>
+    <hr>
     <div>Rezultāts: <input id="rez" name="rez" readonly></div>
 </form>
+
 
     <!-- Section 3: Radio Buttons for Drinks -->
     <script>
