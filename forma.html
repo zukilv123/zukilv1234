@@ -20,72 +20,15 @@
     </form>
 
     <!-- Section 2: Multiplication -->
- <form>
-    <div>1. skaitlis: <input type="text" id="sk1"></div>
-    <div>2. skaitlis: <input type="text" id="sk2"></div>
-    <div>
-        <button type="button" onclick="multiply()">Reizināt</button>
-        <button type="button" onclick="add()">Saskaitīt</button>
-        <button type="button" onclick="subtract()">Atņemt</button>
-        <button type="button" onclick="divide()">Dalīt</button>
-        <button type="button" onclick="reset()">Reset</button>
-    </div>
-    <hr>
-    <div>Rezultāts: <input id="rezultats" readonly></div>
-</form>
-
-<script>
-    function multiply() {
-        const sk1 = parseFloat(document.getElementById('sk1').value);
-        const sk2 = parseFloat(document.getElementById('sk2').value);
-        if (!isNaN(sk1) && !isNaN(sk2)) {
-            document.getElementById('rezultats').value = sk1 * sk2;
-        } else {
-            document.getElementById('rezultats').value = "Nepareizi ievadīti dati";
-        }
-    }
-
-    function add() {
-        const sk1 = parseFloat(document.getElementById('sk1').value);
-        const sk2 = parseFloat(document.getElementById('sk2').value);
-        if (!isNaN(sk1) && !isNaN(sk2)) {
-            document.getElementById('rezultats').value = sk1 + sk2;
-        } else {
-            document.getElementById('rezultats').value = "Nepareizi ievadīti dati";
-        }
-    }
-
-    function subtract() {
-        const sk1 = parseFloat(document.getElementById('sk1').value);
-        const sk2 = parseFloat(document.getElementById('sk2').value);
-        if (!isNaN(sk1) && !isNaN(sk2)) {
-            document.getElementById('rezultats').value = sk1 - sk2;
-        } else {
-            document.getElementById('rezultats').value = "Nepareizi ievadīti dati";
-        }
-    }
-
-    function divide() {
-        const sk1 = parseFloat(document.getElementById('sk1').value);
-        const sk2 = parseFloat(document.getElementById('sk2').value);
-        if (!isNaN(sk1) && !isNaN(sk2)) {
-            if (sk2 !== 0) {
-                document.getElementById('rezultats').value = (sk1 / sk2).toFixed(2);
-            } else {
-                document.getElementById('rezultats').value = "Dalīšana ar nulli nav iespējama!";
-            }
-        } else {
-            document.getElementById('rezultats').value = "Nepareizi ievadīti dati";
-        }
-    }
-
-    function reset() {
-        document.getElementById('sk1').value = "";
-        document.getElementById('sk2').value = "";
-        document.getElementById('rezultats').value = "";
-    }
-</script>
-
+    <form>
+        <div>1. skaitlis: <input type="text" name="sk1"></div>
+        <div>
+            <input value="X" name="reiz" onclick="rez.value=sk1.value*sk2.value" type="button">
+        </div>
+        <div>2. skaitlis: <input type="text" name="sk2"></div>
+        <hr>
+        <div>Rezultāts: <input name="rez"></div>
+    </form>
 
     <!-- Section 3: Radio Buttons for Drinks -->
     <script>
@@ -130,66 +73,5 @@
         <label for="kakao_cb">Kakao</label><br><br>
         <input type="button" value="jāmaksā" onclick="calculateTotal()">
     </form>
-
-    <!-- Section 5: Mathematical Operations -->
-    <h2>Matemātisko Operāciju Forma</h2>
-    <form>
-        <div>
-            1. skaitlis: <input type="number" id="num1">
-        </div>
-        <div>
-            2. skaitlis: <input type="number" id="num2">
-        </div>
-        <div>
-            Rezultāts: <input type="text" id="result" readonly>
-        </div>
-        <div>
-            <button type="button" onclick="add()">Saskaitīt</button>
-            <button type="button" onclick="subtract()">Atņemt</button>
-            <button type="button" onclick="divide()">Dalīt</button>
-            <button type="button" onclick="reset()">Reset</button>
-        </div>
-    </form>
-    <script>
-        function add() {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            if (!isNaN(num1) && !isNaN(num2)) {
-                document.getElementById('result').value = num1 + num2;
-            } else {
-                document.getElementById('result').value = "Nepareizi ievadīti dati";
-            }
-        }
-
-        function subtract() {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            if (!isNaN(num1) && !isNaN(num2)) {
-                document.getElementById('result').value = num1 - num2;
-            } else {
-                document.getElementById('result').value = "Nepareizi ievadīti dati";
-            }
-        }
-
-        function divide() {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            if (!isNaN(num1) && !isNaN(num2)) {
-                if (num2 !== 0) {
-                    document.getElementById('result').value = (num1 / num2).toFixed(2);
-                } else {
-                    document.getElementById('result').value = "Dalīšana ar nulli nav iespējama!";
-                }
-            } else {
-                document.getElementById('result').value = "Nepareizi ievadīti dati";
-            }
-        }
-
-        function reset() {
-            document.getElementById('num1').value = "";
-            document.getElementById('num2').value = "";
-            document.getElementById('result').value = "";
-        }
-    </script>
 </body>
 </html>
