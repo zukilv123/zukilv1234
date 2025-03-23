@@ -58,25 +58,27 @@
     </form>
 
     <!-- Section 4: Checkbox for Multiple Drinks -->
-    <script>
-        function calculateTotal() {
-            let dz = document.getElementsByTagName('input');
-            let sum = 0;
-            for (let i = 0; i < dz.length; i++) {
-                if (dz[i].checked) sum += Number(dz[i].value);
-            }
-            document.getElementById("maksa").innerHTML = "Jāmaksā: " + sum.toFixed(2);
+<script>
+    function calculateTotal() {
+        let dz = document.getElementsByTagName('input');
+        let sum = 0;
+        for (let i = 0; i < dz.length; i++) {
+            if (dz[i].checked) sum += Number(dz[i].value);
         }
-    </script>
-    <p id="maksa"></p>
-    <form>
-        <input type="checkbox" id="kafija_cb" name="kafija" value="3.60">
-        <label for="kafija_cb">Kafija</label><br>
-        <input type="checkbox" id="sula_cb" name="sula" value="2.50">
-        <label for="sula_cb">Sula</label><br>
-        <input type="checkbox" id="kakao_cb" name="kakao" value="3.20">
-        <label for="kakao_cb">Kakao</label><br><br>
-        <input type="button" value="jāmaksā" onclick="calculateTotal()">
-    </form>
+        document.getElementById("maksa").innerHTML = "Jāmaksā: " + sum.toFixed(2);
+    }
+</script>
+<p id="maksa"></p>
+<form>
+    <input type="checkbox" id="kafija_cb" name="kafija" value="3.60">
+    <label for="kafija_cb">Kafija</label><br>
+    <input type="checkbox" id="sula_cb" name="sula" value="2.50">
+    <label for="sula_cb">Sula</label><br>
+    <input type="checkbox" id="kakao_cb" name="kakao" value="3.20">
+    <label for="kakao_cb">Kakao</label><br>
+    <input type="checkbox" id="tēja_cb" name="tēja" value="2.80">
+    <label for="tēja_cb">Tēja</label><br><br>
+    <input type="button" value="Jāmaksā" onclick="calculateTotal()">
+</form>
 </body>
 </html>
