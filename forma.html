@@ -20,46 +20,18 @@
     </form>
 
     <!-- Section 2: Multiplication -->
-   <form>
-    <div>1. skaitlis: <input type="text" id="sk1"></div>
-    <div>2. skaitlis: <input type="text" id="sk2"></div>
-    <hr>
+<form>
+    <div>1. skaitlis: <input type="text" id="sk1" name="sk1"></div>
+    <div>2. skaitlis: <input type="text" id="sk2" name="sk2"></div>
     <div>
-        <input value="+" onclick="calculate('+')" type="button">
-        <input value="-" onclick="calculate('-')" type="button">
-        <input value="×" onclick="calculate('*')" type="button">
-        <input value="÷" onclick="calculate('/')" type="button">
-        <input value="Reset" onclick="resetFields()" type="button">
+        <button onclick="rez.value=+sk1.value + +sk2.value">+</button>
+        <button onclick="rez.value=sk1.value-sk2.value">-</button>
+        <button onclick="rez.value=sk1.value*sk2.value">×</button>
+        <button onclick="rez.value=sk2.value!=0?sk1.value/sk2.value:'Nedrīkst dalīt ar 0'">÷</button>
+        <button onclick="sk1.value=sk2.value=rez.value=''">Reset</button>
     </div>
-    <hr>
-    <div>Rezultāts: <input id="rez" readonly></div>
+    <div>Rezultāts: <input id="rez" name="rez" readonly></div>
 </form>
-
-<script>
-    function calculate(operation) {
-        let sk1 = parseFloat(document.getElementById('sk1').value);
-        let sk2 = parseFloat(document.getElementById('sk2').value);
-        let result;
-        
-        if (isNaN(sk1) || isNaN(sk2)) {
-            result = 'Kļūda';
-        } else {
-            switch (operation) {
-                case '+': result = sk1 + sk2; break;
-                case '-': result = sk1 - sk2; break;
-                case '*': result = sk1 * sk2; break;
-                case '/': result = sk2 !== 0 ? sk1 / sk2 : 'Nedrīkst dalīt ar 0'; break;
-            }
-        }
-        document.getElementById('rez').value = result;
-    }
-    
-    function resetFields() {
-        document.getElementById('sk1').value = '';
-        document.getElementById('sk2').value = '';
-        document.getElementById('rez').value = '';
-    }
-</script>
 
     <!-- Section 3: Radio Buttons for Drinks -->
     <script>
