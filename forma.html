@@ -73,5 +73,66 @@
         <label for="kakao_cb">Kakao</label><br><br>
         <input type="button" value="jāmaksā" onclick="calculateTotal()">
     </form>
+
+    <!-- Section 5: Mathematical Operations -->
+    <h2>Matemātisko Operāciju Forma</h2>
+    <form>
+        <div>
+            1. skaitlis: <input type="number" id="num1">
+        </div>
+        <div>
+            2. skaitlis: <input type="number" id="num2">
+        </div>
+        <div>
+            Rezultāts: <input type="text" id="result" readonly>
+        </div>
+        <div>
+            <button type="button" onclick="add()">Saskaitīt</button>
+            <button type="button" onclick="subtract()">Atņemt</button>
+            <button type="button" onclick="divide()">Dalīt</button>
+            <button type="button" onclick="reset()">Reset</button>
+        </div>
+    </form>
+    <script>
+        function add() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                document.getElementById('result').value = num1 + num2;
+            } else {
+                document.getElementById('result').value = "Nepareizi ievadīti dati";
+            }
+        }
+
+        function subtract() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                document.getElementById('result').value = num1 - num2;
+            } else {
+                document.getElementById('result').value = "Nepareizi ievadīti dati";
+            }
+        }
+
+        function divide() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            if (!isNaN(num1) && !isNaN(num2)) {
+                if (num2 !== 0) {
+                    document.getElementById('result').value = (num1 / num2).toFixed(2);
+                } else {
+                    document.getElementById('result').value = "Dalīšana ar nulli nav iespējama!";
+                }
+            } else {
+                document.getElementById('result').value = "Nepareizi ievadīti dati";
+            }
+        }
+
+        function reset() {
+            document.getElementById('num1').value = "";
+            document.getElementById('num2').value = "";
+            document.getElementById('result').value = "";
+        }
+    </script>
 </body>
 </html>
