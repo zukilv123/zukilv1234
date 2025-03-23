@@ -36,26 +36,29 @@
 
 
     <!-- Section 3: Radio Buttons for Drinks -->
-    <script>
-        function setDrinkPrice() {
-            let dz = document.getElementsByName('drink');
-            for (let i = 0; i < dz.length; i++) {
-                if (dz[i].checked) {
-                    document.getElementById("poga").value = dz[i].value;
-                }
+<script>
+    function setDrinkPrice() {
+        let dz = document.getElementsByName('drink');
+        let price = "";
+        for (let i = 0; i < dz.length; i++) {
+            if (dz[i].checked) {
+                price = dz[i].value;
             }
         }
-    </script>
-    <p>Izvēlies dzērienu:</p>
-    <form>
-        <input type="radio" id="kafija" name="drink" value="3.60">
-        <label for="kafija">Kafija</label><br>
-        <input type="radio" id="sula" name="drink" value="2.50">
-        <label for="sula">Sula</label><br>
-        <input type="radio" id="kakao" name="drink" value="3.20">
-        <label for="kakao">Kakao</label><br><br>
-        <input type="button" id="poga" value="jāmaksā" onclick="setDrinkPrice()">
-    </form>
+        document.getElementById("cena").innerText = "Cena: " + (price ? price + " €" : "");
+    }
+</script>
+<p>Izvēlies dzērienu:</p>
+<form>
+    <input type="radio" id="kafija" name="drink" value="3.60" onclick="setDrinkPrice()">
+    <label for="kafija">Kafija</label><br>
+    <input type="radio" id="sula" name="drink" value="2.50" onclick="setDrinkPrice()">
+    <label for="sula">Sula</label><br>
+    <input type="radio" id="kakao" name="drink" value="3.20" onclick="setDrinkPrice()">
+    <label for="kakao">Kakao</label><br><br>
+    <input type="button" id="poga" value="Jāmaksā">
+    <span id="cena"></span>
+</form>
 
     <!-- Section 4: Checkbox for Multiple Drinks -->
 <script>
