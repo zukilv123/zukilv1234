@@ -45,19 +45,19 @@
                 price = dz[i].value;
             }
         }
-        document.getElementById("cena").innerText = "Cena: " + (price ? price + " €" : "");
+        document.getElementById("cena").innerText = price ? "Cena: " + price + " €" : "Lūdzu, izvēlieties dzērienu";
     }
 </script>
 <p>Izvēlies dzērienu:</p>
 <form>
-    <input type="radio" id="kafija" name="drink" value="3.60" onclick="setDrinkPrice()">
+    <input type="radio" id="kafija" name="drink" value="3.60">
     <label for="kafija">Kafija</label><br>
-    <input type="radio" id="sula" name="drink" value="2.50" onclick="setDrinkPrice()">
+    <input type="radio" id="sula" name="drink" value="2.50">
     <label for="sula">Sula</label><br>
-    <input type="radio" id="kakao" name="drink" value="3.20" onclick="setDrinkPrice()">
+    <input type="radio" id="kakao" name="drink" value="3.20">
     <label for="kakao">Kakao</label><br><br>
-    <input type="button" id="poga" value="Jāmaksā">
-    <span id="cena"></span>
+    <input type="button" id="poga" value="Jāmaksā" onclick="setDrinkPrice()">
+    <p id="cena"></p>
 </form>
 
     <!-- Section 4: Checkbox for Multiple Drinks -->
